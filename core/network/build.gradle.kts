@@ -8,6 +8,10 @@ android {
     namespace = "com.arshapshap.paymentsapp.core.network"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
+    defaultConfig {
+        minSdk = libs.versions.minSdk.get().toInt()
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -22,9 +26,13 @@ android {
     buildTypes {
         debug {
             buildConfigField("String", "BASE_API_URL", "\"https://easypay.world/api-test/\"")
+            buildConfigField("String", "APP_KEY", "\"12345\"")
+            buildConfigField("String", "API_VERSION", "\"1\"")
         }
         release {
             buildConfigField("String", "BASE_API_URL", "\"https://easypay.world/api-test/\"")
+            buildConfigField("String", "APP_KEY", "\"12345\"")
+            buildConfigField("String", "API_VERSION", "\"1\"")
         }
     }
 }
@@ -34,6 +42,7 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.okhttp)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.security)
 
     api(libs.retrofit.core)
     api(libs.retrofit.kotlinx.serialization)

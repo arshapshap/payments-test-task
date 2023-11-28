@@ -20,6 +20,7 @@ okhttp = "4.11.0"
 retrofit-core = "2.9.0"
 retrofit-kotlinx-serialization-converter = "1.0.0"
 kotlinx-serialization-json = "1.5.1"
+security = "1.1.0-alpha06"
 
 [libraries]
 activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
@@ -37,6 +38,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit-core" }
 retrofit-kotlinx-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-kotlinx-serialization-converter" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+androidx-security = { group = "androidx.security", name = "security-crypto", version.ref = "security" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
