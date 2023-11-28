@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Payments App"
 include(":app")
- 
+include(":core:designsystem")
