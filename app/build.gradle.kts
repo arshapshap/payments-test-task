@@ -44,6 +44,7 @@ android {
 dependencies {
     implementation(project(":core:designsystem"))
     implementation(project(":core:network"))
+    implementation(project(":core:presentation"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)

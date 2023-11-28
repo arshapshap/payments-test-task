@@ -18,3 +18,4 @@ rootProject.name = "Payments App"
 include(":app")
 include(":core:designsystem")
 include(":core:network")
+include(":core:presentation")

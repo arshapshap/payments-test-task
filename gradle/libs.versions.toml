@@ -4,6 +4,7 @@ compileSdk = "34"
 targetSdk = "34"
 
 agp = "8.1.2"
+activity-ktx = "1.8.1"
 org-jetbrains-kotlin-android = "1.9.0"
 core-ktx = "1.12.0"
 junit = "4.13.2"
@@ -21,6 +22,7 @@ retrofit-kotlinx-serialization-converter = "1.0.0"
 kotlinx-serialization-json = "1.5.1"
 
 [libraries]
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
