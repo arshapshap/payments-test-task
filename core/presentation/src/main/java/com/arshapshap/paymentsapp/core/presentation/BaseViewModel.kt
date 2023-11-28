@@ -1,4 +1,4 @@
-package com.arshapshap.hotelapp.core.presentation
+package com.arshapshap.paymentsapp.core.presentation
 
 import androidx.lifecycle.ViewModel
 
