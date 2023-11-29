@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_out">Выйти из аккаунта</string>
+    <string name="log_out">Выйти</string>
     <string name="payments">Платежи</string>
+    <string name="unknown">Неизвестно</string>
 </resources>

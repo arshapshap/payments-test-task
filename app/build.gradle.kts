@@ -43,7 +43,8 @@ android {
 
 dependencies {
     implementation(project(":feature:payments"))
-    implementation(project(":feature:auth"))
+    implementation(project(":feature:auth:api"))
+    implementation(project(":feature:auth:impl"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:network"))
     implementation(project(":core:presentation"))

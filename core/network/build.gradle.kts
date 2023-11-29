@@ -41,9 +41,9 @@ dependencies {
 
     implementation(libs.koin)
     implementation(libs.okhttp)
-    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.security)
 
+    api(libs.kotlinx.serialization.json)
     api(libs.retrofit.core)
     api(libs.retrofit.kotlinx.serialization)
 }

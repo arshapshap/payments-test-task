@@ -7,6 +7,27 @@
 
     <fragment
         android:id="@+id/fragment_auth"
-        android:name="com.arshapshap.paymentsapp.feature.auth.presentation.screen.AuthFragment"
-        tools:layout="@layout/fragment_auth" />
+        android:name="com.arshapshap.paymentsapp.feature.auth.impl.presentation.screen.AuthFragment"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_fragment_auth_to_fragment_payments"
+            app:destination="@id/fragment_payments"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/fragment_payments"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_payments"
+        android:name="com.arshapshap.paymentsapp.feature.payments.presentation.screen.PaymentsFragment"
+        tools:layout="@layout/fragment_payments" >
+        <action
+            android:id="@+id/action_fragment_payments_to_fragment_auth"
+            app:destination="@id/fragment_auth"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragment_auth"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
