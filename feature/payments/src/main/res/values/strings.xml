@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="log_out">Выйти</string>
+    <string name="payments">Платежи</string>
+    <string name="unknown">Неизвестно</string>
+    <string name="log_out_alert_message">Вы уверены, что хотите выйти из аккаунта?</string>
+    <string name="cancel">Отмена</string>
+    <string name="log_out_alert_title">Выход</string>
+</resources>

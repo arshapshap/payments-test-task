@@ -42,11 +42,19 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:payments"))
+    implementation(project(":feature:auth:api"))
+    implementation(project(":feature:auth:impl"))
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:network"))
+    implementation(project(":core:presentation"))
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.bundles.navigation)
+    implementation(libs.koin)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

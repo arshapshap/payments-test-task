@@ -16,4 +16,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "Payments App"
 include(":app")
- 
+include(":core:designsystem")
+include(":core:network")
+include(":core:presentation")
+include(":feature:auth:impl")
+include(":feature:auth:api")
+include(":feature:payments")
