@@ -4,4 +4,9 @@
     <string name="password">Пароль</string>
     <string name="log_in">Войти</string>
     <string name="authorization">Авторизация</string>
+    <string name="empty_login">Введите логин</string>
+    <string name="empty_password">Введите пароль</string>
+    <string name="incorrect_credentials">Неверный логин или пароль</string>
+    <string name="whitespace">\u0020</string>
+    <string name="network_error">Ошибка сети. Проверьте подключение</string>
 </resources>

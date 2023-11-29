@@ -42,6 +42,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:auth"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:network"))
     implementation(project(":core:presentation"))
@@ -50,6 +51,8 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.bundles.navigation)
+    implementation(libs.koin)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
