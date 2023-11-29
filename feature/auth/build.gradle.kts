@@ -45,7 +45,6 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.bundles.navigation)
     implementation(libs.koin)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
