@@ -56,6 +56,9 @@ internal class AuthFragment : BaseFragment<FragmentAuthBinding, AuthViewModel>(
                 is BaseError.NetworkError -> {
                     requireContext().showToast(getString(R.string.network_error))
                 }
+                is BaseError.UnknownError -> {
+                    requireContext().showToast(getString(R.string.unknown_error))
+                }
             }
         }
     }

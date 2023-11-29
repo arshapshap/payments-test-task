@@ -8,12 +8,13 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
-    factory<TokenManager> { TokenManagerImpl(context = get()) }
+    factory<TokenManager> { TokenManagerImpl(context = androidContext()) }
 
     factory<MainInterceptor> { MainInterceptor() }
     factory<TokenInterceptor> { TokenInterceptor(tokenManager = get()) }

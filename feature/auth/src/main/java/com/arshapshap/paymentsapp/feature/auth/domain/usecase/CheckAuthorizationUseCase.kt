@@ -1,10 +1,10 @@
 package com.arshapshap.paymentsapp.feature.auth.domain.usecase
 
-import com.arshapshap.paymentsapp.feature.auth.domain.repository.AuthRepository
+import com.arshapshap.paymentsapp.feature.auth.domain.repository.TokenRepository
 
 class CheckAuthorizationUseCase internal constructor(
-    private val repository: AuthRepository
+    private val repository: TokenRepository
 ) {
 
-    suspend operator fun invoke(): Boolean = repository.isAuthorized()
+    operator fun invoke(): Boolean = repository.isAuthorized()
 }

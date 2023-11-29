@@ -1,6 +1,5 @@
 package com.arshapshap.paymentsapp.feature.auth.presentation.screen
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.arshapshap.paymentsapp.core.presentation.BaseError
 import com.arshapshap.paymentsapp.core.presentation.BaseViewModel
@@ -11,6 +10,7 @@ import com.arshapshap.paymentsapp.feature.auth.domain.usecase.LogInUseCase
 import com.arshapshap.paymentsapp.feature.auth.presentation.FeatureAuthRouter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.net.UnknownHostException
 
 internal class AuthViewModel(
     private val logInUseCase: LogInUseCase,
@@ -35,9 +35,11 @@ internal class AuthViewModel(
                 else
                     navigate()
             } catch (e: Exception) {
-                //TODO("Catch network errors")
-                Log.e("NETWORK", e.toString())
-                _error.postValue(BaseError.NetworkError)
+                val error = when (e) {
+                    is UnknownHostException -> BaseError.NetworkError
+                    else -> BaseError.UnknownError
+                }
+                _error.postValue(error)
             } finally {
                 _isLoading.postValue(false)
             }
@@ -70,7 +72,7 @@ internal class AuthViewModel(
     private fun handleAuthorizationError(result: AuthorizationResult) {
         when (result.error) {
             AuthorizationError.IncorrectCredentials -> _error.postValue(AuthError.IncorrectCredentials())
-            null -> { }
+            else -> _error.postValue(BaseError.UnknownError)
         }
     }
 }

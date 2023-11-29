@@ -31,4 +31,8 @@ internal class TokenManagerImpl(
     override fun saveToken(token: String) {
         editor.putString(TOKEN_SHARED_PREFS_KEY, token).apply()
     }
+
+    override fun deleteToken() {
+        editor.remove(TOKEN_SHARED_PREFS_KEY).apply()
+    }
 }

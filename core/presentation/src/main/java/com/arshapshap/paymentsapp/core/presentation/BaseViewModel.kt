@@ -16,4 +16,6 @@ abstract class BaseViewModel : ViewModel() {
 interface BaseError {
 
     data object NetworkError : BaseError
+
+    data object UnknownError: BaseError
 }
