@@ -4,8 +4,9 @@ import androidx.navigation.NavController
 import com.arshapshap.paymentsapp.R
 import com.arshapshap.paymentsapp.feature.auth.impl.presentation.FeatureAuthRouter
 import com.arshapshap.paymentsapp.feature.payments.presentation.FeaturePaymentsRouter
+import com.arshapshap.paymentsapp.presentation.MainRouter
 
-class Navigator : FeatureAuthRouter, FeaturePaymentsRouter {
+class Navigator : FeatureAuthRouter, FeaturePaymentsRouter, MainRouter {
 
     private var navController: NavController? = null
 
@@ -20,11 +21,19 @@ class Navigator : FeatureAuthRouter, FeaturePaymentsRouter {
         }
     }
 
-    override fun openPaymentsList() {
+    override fun openPaymentsFromAuthorization() {
         navController?.navigate(R.id.action_fragment_auth_to_fragment_payments)
     }
 
-    override fun openAuthorization() {
+    override fun openAuthorizationFromPayments() {
         navController?.navigate(R.id.action_fragment_payments_to_fragment_auth)
+    }
+
+    override fun openPaymentsListFromSplash() {
+        navController?.navigate(R.id.action_fragment_splash_to_fragment_payments)
+    }
+
+    override fun openAuthorizationFromSplash() {
+        navController?.navigate(R.id.action_fragment_splash_to_fragment_auth)
     }
 }

@@ -6,7 +6,7 @@ import com.arshapshap.paymentsapp.feature.auth.impl.data.repository.AuthReposito
 import com.arshapshap.paymentsapp.feature.auth.impl.data.repository.TokenRepositoryImpl
 import com.arshapshap.paymentsapp.feature.auth.impl.domain.repository.AuthRepository
 import com.arshapshap.paymentsapp.feature.auth.api.repository.TokenRepository
-import com.arshapshap.paymentsapp.feature.auth.impl.domain.usecase.CheckAuthorizationUseCase
+import com.arshapshap.paymentsapp.feature.auth.api.usecase.CheckAuthorizationUseCase
 import com.arshapshap.paymentsapp.feature.auth.impl.domain.usecase.LogInUseCase
 import com.arshapshap.paymentsapp.feature.auth.api.usecase.LogOutUseCase
 import com.arshapshap.paymentsapp.feature.auth.impl.presentation.screen.AuthViewModel

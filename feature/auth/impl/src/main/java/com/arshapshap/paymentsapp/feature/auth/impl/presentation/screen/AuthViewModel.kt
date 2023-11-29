@@ -62,7 +62,7 @@ internal class AuthViewModel(
     }
 
     private fun navigate() {
-        router.openPaymentsList()
+        router.openPaymentsFromAuthorization()
     }
 
     private fun handleAuthorizationError(result: AuthorizationResult) {

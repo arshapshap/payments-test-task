@@ -29,10 +29,10 @@ internal class PaymentsViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val result = getPaymentsUseCase.invoke()
-                if (!result.success || result.payments == null)
-                    handleError(result)
-                else
+                if (result.success)
                     _payments.postValue(result.payments!!)
+                else
+                    handleError(result)
             } catch (e: Exception) {
                 val error = when (e) {
                     is UnknownHostException -> BaseError.NetworkError
@@ -47,7 +47,7 @@ internal class PaymentsViewModel(
 
     fun logOut() {
         logOutUseCase.invoke()
-        router.openAuthorization()
+        router.openAuthorizationFromPayments()
     }
 
     private fun handleError(result: PaymentsResult) {

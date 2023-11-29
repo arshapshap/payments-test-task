@@ -1,4 +1,4 @@
-package com.arshapshap.paymentsapp.feature.auth.impl.domain.usecase
+package com.arshapshap.paymentsapp.feature.auth.api.usecase
 
 import com.arshapshap.paymentsapp.feature.auth.api.repository.TokenRepository
 
