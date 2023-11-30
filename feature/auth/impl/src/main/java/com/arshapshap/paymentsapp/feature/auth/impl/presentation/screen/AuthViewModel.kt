@@ -36,7 +36,7 @@ internal class AuthViewModel(
             } catch (e: Exception) {
                 val error = when (e) {
                     is UnknownHostException -> BaseError.NetworkError
-                    else -> BaseError.UnknownError
+                    else -> BaseError.UnknownError(e.toString())
                 }
                 _error.postValue(error)
             } finally {
@@ -71,7 +71,7 @@ internal class AuthViewModel(
     private fun handleAuthorizationError(result: AuthorizationResult) {
         when (result.error) {
             AuthorizationError.IncorrectCredentials -> _error.postValue(AuthViewModelError.IncorrectCredentials())
-            else -> _error.postValue(BaseError.UnknownError)
+            else -> _error.postValue(BaseError.UnknownError())
         }
     }
 }

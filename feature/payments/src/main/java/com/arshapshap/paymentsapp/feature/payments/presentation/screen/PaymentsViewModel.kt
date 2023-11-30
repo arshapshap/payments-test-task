@@ -36,7 +36,7 @@ internal class PaymentsViewModel(
             } catch (e: Exception) {
                 val error = when (e) {
                     is UnknownHostException -> BaseError.NetworkError
-                    else -> BaseError.UnknownError
+                    else -> BaseError.UnknownError(e.toString())
                 }
                 _error.postValue(error)
             } finally {
@@ -53,7 +53,7 @@ internal class PaymentsViewModel(
     private fun handleError(result: PaymentsResult) {
         when (result.error) {
             RequestError.IncorrectToken -> _error.postValue(PaymentsViewModelError.IncorrectToken)
-            else -> _error.postValue(BaseError.UnknownError)
+            else -> _error.postValue(BaseError.UnknownError())
         }
     }
 }

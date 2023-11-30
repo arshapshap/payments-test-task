@@ -2,4 +2,5 @@
 <resources>
     <string name="network_error">Ошибка сети. Проверьте подключение</string>
     <string name="unknown_error">Произошла непредвиденная ошибка</string>
+    <string name="ok">ОК</string>
 </resources>

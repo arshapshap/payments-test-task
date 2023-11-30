@@ -5,6 +5,7 @@ import androidx.core.view.isGone
 import androidx.core.widget.doAfterTextChanged
 import com.arshapshap.paymentsapp.core.presentation.BaseError
 import com.arshapshap.paymentsapp.core.presentation.BaseFragment
+import com.arshapshap.paymentsapp.core.presentation.utils.showAlert
 import com.arshapshap.paymentsapp.core.presentation.utils.showToast
 import com.arshapshap.paymentsapp.feature.auth.impl.R
 import com.arshapshap.paymentsapp.feature.auth.impl.databinding.FragmentAuthBinding
@@ -57,7 +58,12 @@ internal class AuthFragment : BaseFragment<FragmentAuthBinding, AuthViewModel>(
                     requireContext().showToast(getString(com.arshapshap.paymentsapp.core.designsystem.R.string.network_error))
                 }
                 is BaseError.UnknownError -> {
-                    requireContext().showToast(getString(com.arshapshap.paymentsapp.core.designsystem.R.string.unknown_error))
+                    requireContext().showAlert(
+                        title = getString(com.arshapshap.paymentsapp.core.designsystem.R.string.unknown_error),
+                        message = it.message ?: "",
+                        positiveButtonText = getString(com.arshapshap.paymentsapp.core.designsystem.R.string.ok),
+                        onPositiveButtonClick = { }
+                    )
                 }
             }
         }

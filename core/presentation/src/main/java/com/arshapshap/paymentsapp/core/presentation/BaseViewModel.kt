@@ -17,5 +17,5 @@ interface BaseError {
 
     data object NetworkError : BaseError
 
-    data object UnknownError: BaseError
+    data class UnknownError(val message: String? = null): BaseError
 }
