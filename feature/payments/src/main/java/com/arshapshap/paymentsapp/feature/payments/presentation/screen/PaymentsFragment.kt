@@ -3,6 +3,7 @@ package com.arshapshap.paymentsapp.feature.payments.presentation.screen
 import androidx.core.view.isGone
 import com.arshapshap.paymentsapp.core.presentation.BaseError
 import com.arshapshap.paymentsapp.core.presentation.BaseFragment
+import com.arshapshap.paymentsapp.core.presentation.utils.showAlert
 import com.arshapshap.paymentsapp.core.presentation.utils.showAlertWithTwoButtons
 import com.arshapshap.paymentsapp.core.presentation.utils.showToast
 import com.arshapshap.paymentsapp.feature.payments.R
@@ -23,12 +24,17 @@ internal class PaymentsFragment : BaseFragment<FragmentPaymentsBinding, Payments
             buttonLogOut.setOnClickListener {
                 showLogOutConfirmAlert()
             }
+
+            swipeRefreshLayout.setOnRefreshListener {
+                viewModel.loadData()
+            }
         }
     }
 
     override fun subscribe() {
         viewModel.isLoading.observe(viewLifecycleOwner) {
             binding.progressBarLoading.isGone = !it
+            binding.swipeRefreshLayout.isRefreshing = binding.swipeRefreshLayout.isRefreshing && it
         }
 
         viewModel.error.observe(viewLifecycleOwner) {
@@ -37,7 +43,12 @@ internal class PaymentsFragment : BaseFragment<FragmentPaymentsBinding, Payments
                     requireContext().showToast(getString(com.arshapshap.paymentsapp.core.designsystem.R.string.network_error))
                 }
                 is BaseError.UnknownError -> {
-                    requireContext().showToast(getString(com.arshapshap.paymentsapp.core.designsystem.R.string.unknown_error))
+                    requireContext().showAlert(
+                        title = getString(com.arshapshap.paymentsapp.core.designsystem.R.string.unknown_error),
+                        message = it.message ?: "",
+                        positiveButtonText = getString(com.arshapshap.paymentsapp.core.designsystem.R.string.ok),
+                        onPositiveButtonClick = { }
+                    )
                 }
             }
         }

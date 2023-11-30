@@ -21,6 +21,7 @@ retrofit-core = "2.9.0"
 retrofit-kotlinx-serialization-converter = "1.0.0"
 kotlinx-serialization-json = "1.5.1"
 security = "1.1.0-alpha06"
+swiperefreshlayout = "1.1.0"
 
 [libraries]
 activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
@@ -39,6 +40,7 @@ retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.r
 retrofit-kotlinx-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-kotlinx-serialization-converter" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 androidx-security = { group = "androidx.security", name = "security-crypto", version.ref = "security" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
