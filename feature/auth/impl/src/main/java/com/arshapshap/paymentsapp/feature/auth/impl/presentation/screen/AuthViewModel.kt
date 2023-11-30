@@ -28,8 +28,11 @@ internal class AuthViewModel(
                 val result = logInUseCase.invoke(AuthorizationData(login, password))
                 if (!result.success)
                     handleAuthorizationError(result)
-                else
-                    navigate()
+                else {
+                    launch(Dispatchers.Main) {
+                        navigate()
+                    }
+                }
             } catch (e: Exception) {
                 val error = when (e) {
                     is UnknownHostException -> BaseError.NetworkError
