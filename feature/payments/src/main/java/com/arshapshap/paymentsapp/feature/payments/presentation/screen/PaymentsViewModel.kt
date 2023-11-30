@@ -25,6 +25,10 @@ internal class PaymentsViewModel(
     val payments: LiveData<List<Payment>> = _payments
 
     init {
+        loadData()
+    }
+
+    fun loadData() {
         _isLoading.value = true
         viewModelScope.launch(Dispatchers.IO) {
             try {

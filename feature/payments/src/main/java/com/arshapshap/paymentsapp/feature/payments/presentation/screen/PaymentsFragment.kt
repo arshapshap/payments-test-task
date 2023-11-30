@@ -24,12 +24,17 @@ internal class PaymentsFragment : BaseFragment<FragmentPaymentsBinding, Payments
             buttonLogOut.setOnClickListener {
                 showLogOutConfirmAlert()
             }
+
+            swipeRefreshLayout.setOnRefreshListener {
+                viewModel.loadData()
+            }
         }
     }
 
     override fun subscribe() {
         viewModel.isLoading.observe(viewLifecycleOwner) {
             binding.progressBarLoading.isGone = !it
+            binding.swipeRefreshLayout.isRefreshing = binding.swipeRefreshLayout.isRefreshing && it
         }
 
         viewModel.error.observe(viewLifecycleOwner) {
