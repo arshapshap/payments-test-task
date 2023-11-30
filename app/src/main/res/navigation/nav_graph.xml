@@ -12,12 +12,12 @@
         <action
             android:id="@+id/action_fragment_splash_to_fragment_payments"
             app:destination="@id/fragment_payments"
-            app:popUpTo="@id/fragment_payments"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragment_splash_to_fragment_auth"
             app:destination="@id/fragment_auth"
-            app:popUpTo="@id/fragment_auth"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
     </fragment>
 
@@ -30,7 +30,7 @@
             app:destination="@id/fragment_payments"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
-            app:popUpTo="@id/fragment_payments"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
     </fragment>
 
@@ -43,7 +43,7 @@
             app:destination="@id/fragment_auth"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"
-            app:popUpTo="@id/fragment_auth"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>
